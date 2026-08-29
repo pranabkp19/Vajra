@@ -1,0 +1,29 @@
+# Secrets & Environment Files
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+
+# VAJRA Workspace Artifacts
+workspace/projects/
+workspace/builds/
+workspace/fuzzing/
+workspace/crashes/
+workspace/patches/
+workspace/reports/

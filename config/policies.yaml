@@ -1,0 +1,36 @@
+policies:
+  allowed_actions:
+    - RUN_SAST
+    - RUN_FUZZ
+    - RUN_ASAN
+    - RUN_GDB
+    - REPLAY_POV
+    - GENERATE_PATCH
+    - RUN_BUILD
+    - RUN_REGRESSION
+    - VERIFY
+    - TRIAGE
+    - STOP
+
+  workspace_containment:
+    strict_path_check: true
+    allow_absolute_paths_outside_workspace: false
+    allowed_extensions:
+      - ".c"
+      - ".cpp"
+      - ".h"
+      - ".hpp"
+      - ".cc"
+      - ".cxx"
+      - ".txt"
+      - ".cmake"
+      - ".json"
+      - ".patch"
+      - ".bin"
+      - ".in"
+
+  security_limits:
+    max_file_read_bytes: 1048576 # 1 MB
+    max_output_capture_bytes: 5242880 # 5 MB
+    max_fuzzing_duration_seconds: 300
+    allow_network_during_tool_exec: false

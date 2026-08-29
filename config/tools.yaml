@@ -1,0 +1,29 @@
+tools:
+  semgrep:
+    cmd: "semgrep"
+    args: ["--config=auto", "--json"]
+  
+  gcc:
+    cmd: "gcc"
+    default_flags: ["-Wall", "-Wextra", "-g", "-O0"]
+    asan_flags: ["-fsanitize=address,undefined", "-fno-omit-frame-pointer"]
+
+  g++:
+    cmd: "g++"
+    default_flags: ["-Wall", "-Wextra", "-g", "-O0"]
+    asan_flags: ["-fsanitize=address,undefined", "-fno-omit-frame-pointer"]
+
+  afl:
+    fuzz_cmd: "afl-fuzz"
+    gcc_cmd: "afl-gcc"
+    gxx_cmd: "afl-g++"
+
+  gdb:
+    cmd: "gdb"
+    args: ["--batch", "-quiet"]
+
+  cmake:
+    cmd: "cmake"
+
+  ctest:
+    cmd: "ctest"

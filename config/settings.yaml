@@ -1,0 +1,35 @@
+system:
+  name: "VAJRA"
+  version: "1.0.0"
+  description: "Verified Autonomous Joint Reasoning & Remediation Architecture"
+  environment: "development"
+
+server:
+  host: "127.0.0.1"
+  port: 8000
+  cors_origins:
+    - "http://localhost:5173"
+    - "http://127.0.0.1:5173"
+
+workspace:
+  root_dir: "D:/VAJRA/workspace"
+  projects_dir: "D:/VAJRA/workspace/projects"
+  builds_dir: "D:/VAJRA/workspace/builds"
+  fuzzing_dir: "D:/VAJRA/workspace/fuzzing"
+  crashes_dir: "D:/VAJRA/workspace/crashes"
+  patches_dir: "D:/VAJRA/workspace/patches"
+  reports_dir: "D:/VAJRA/workspace/reports"
+
+llm:
+  provider: "groq"
+  model: "openai/gpt-oss-120b"
+  temperature: 0.1
+  max_tokens: 2048
+
+execution:
+  max_remediation_attempts: 3
+  sast_timeout_seconds: 120
+  fuzz_timeout_seconds: 300
+  asan_timeout_seconds: 60
+  gdb_timeout_seconds: 60
+  build_timeout_seconds: 120
